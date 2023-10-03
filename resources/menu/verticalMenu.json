@@ -46,86 +46,19 @@
       "slug": "ui",
       "submenu": [
         {
-          "url": "ui/accordion",
-          "name": "Graphics & Design",
-          "slug": "ui-accordion"
+          "url": "/categories/create",
+          "name": "Create a New Categorie",
+          "slug": "pages-account-settings-account"
         },
         {
-          "url": "ui/alerts",
-          "name": "Programming & Tech",
-          "slug": "ui-alerts"
+          "url": "categories",
+          "name": "List All Categories",
+          "slug": "pages-account-settings-notifications"
         },
         {
-          "url": "ui/badges",
-          "name": "Digital Marketing",
-          "slug": "ui-badges"
-        },
-        {
-          "url": "ui/buttons",
-          "name": "Video & Animation",
-          "slug": "ui-buttons"
-        },
-        {
-          "url": "ui/carousel",
-          "name": "Writing & Translation",
-          "slug": "ui-carousel"
-        },
-        {
-          "url": "ui/collapse",
-          "name": "Music & Audio",
-          "slug": "ui-collapse"
-        },
-        {
-          "url": "ui/dropdowns",
-          "name": "Business",
-          "slug": "ui-dropdowns"
-        },
-        {
-          "url": "ui/footer",
-          "name": "Photography",
-          "slug": "ui-footer"
-        },
-        {
-          "url": "ui/list-groups",
-          "name": "AI Services",
-          "slug": "ui-list-groups"
-        }
-      ]
-    },
-    {
-      "name": "Users Management",
-      "icon": "menu-icon tf-icons bx bx-copy",
-      "slug": "extended",
-      "submenu": [
-        {
-          "url": "extended/ui-perfect-scrollbar",
-          "name": "Users Stats",
-          "slug": "extended-ui-perfect-scrollbar"
-        },
-        {
-          "url": "extended/ui-text-divider",
-          "name": "Feedbacks",
-          "slug": "extended-ui-text-divider"
-        }
-      ]
-    },
-    {
-      "menuHeader": "Paiment"
-    },
-    {
-      "name": "Payment Infos",
-      "icon": "menu-icon tf-icons bx bx-detail",
-      "slug": "forms",
-      "submenu": [
-        {
-          "url": "forms/basic-inputs",
-          "name": "Earning Stats",
-          "slug": "forms-basic-inputs"
-        },
-        {
-          "url": "forms/input-groups",
-          "name": "Invoices",
-          "slug": "forms-input-groups"
+          "url": "/categories/{category}/edit",
+          "name": "Edit Categorie",
+          "slug": "pages-account-settings-connections"
         }
       ]
     },
