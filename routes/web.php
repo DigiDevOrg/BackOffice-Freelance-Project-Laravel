@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SkillsController;
 
 
 /*
@@ -87,6 +88,18 @@ Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tab
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+
+Route::get('/skills', [SkillsController::class, 'index'])->name('skills.index');
+Route::get('/skills/create', [SkillsController::class, 'create'])->name('skills.create');
+Route::post('/skills', [SkillsController::class, 'store'])->name('skills.store');
+
+Route::get('/skills/{skill}', [SkillsController::class, 'show'])->name('skills.show');
+Route::get('/skills/{skill}/edit', [SkillsController::class, 'edit'])->name('skills.edit');
+Route::put('/skills/{skill}', [SkillsController::class, 'update'])->name('skills.update');
+Route::delete('/skills/{skill}', [SkillsController::class, 'destroy'])->name('skills.destroy');
+
+
+
 
 
 Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
