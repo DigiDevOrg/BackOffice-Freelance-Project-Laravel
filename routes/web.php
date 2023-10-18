@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +88,15 @@ Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tab
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+
+//posts and comments
+Route::resource("posts", PostController::class);
+
+
+Route::resource('comments', CommentController::class)->only(['edit', 'update', 'destroy']);
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+
 
 
 Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
