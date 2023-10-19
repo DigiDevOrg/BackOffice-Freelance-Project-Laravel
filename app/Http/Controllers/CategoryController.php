@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Skills;
 use Cloudinary;
 //use Cloudinary\Uploader;
 
@@ -11,8 +12,16 @@ class CategoryController extends Controller
 {
     public function index()
     {
+        //get the all skills that has this categorie_id
+       
         $categories = Category::all();
         return view('categories.index', compact('categories'));
+    }
+
+    
+    public function show(Category $category)
+    {
+        return view('categories.show', compact('category'));
     }
 
     public function create()
@@ -47,7 +56,9 @@ class CategoryController extends Controller
     public function edit($id)
 {
     $category = Category::findOrFail($id);
-    return view('categories.edit', compact('category'));
+    $skills = Skills::where('category_id', $category->id)->get();
+    return view('categories.edit', compact('category', 'skills'));
+    
 }
 
 public function update(Request $request, $id)
