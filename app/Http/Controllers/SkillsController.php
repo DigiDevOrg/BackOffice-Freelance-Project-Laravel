@@ -23,20 +23,19 @@ class SkillsController extends Controller
 
     public function store(Request $request)
     {
-        
-         dd($request->all());
-
+     
         $request->validate([
             'skillName' => 'required|string|max:255',
             'description' => 'required',
             'category_id' => 'required',
-            
         ]);
-
-        Skills::create($request->all());
-
-        return redirect()->route('skills.index')->with('success', 'Skill created successfully');
+    
+        $skill = Skills::create($request->all());
+    
+        return redirect()->route('categories.edit', ['category' => $request->category_id])
+            ->withSuccess(__('Skill created successfully!'));
     }
+    
 
     public function show(Skills $skill)
     {
