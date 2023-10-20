@@ -35,10 +35,11 @@
       "menuHeader": "App-Infos"
     },
     {
-      "name": "Sellers",
+      "name": "Services",
       "icon": "menu-icon tf-icons bx bx-collection",
-      "slug": "cards-basic",
-      "url": "/cards/basic"
+        "url": "/services",
+        "slug": "Services"
+      
     },
     {
       "name": "Selling Categories",

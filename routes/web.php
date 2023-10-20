@@ -82,6 +82,20 @@ Route::get('/form/layouts-horizontal', $controller_path . '\form_layouts\Horizon
 // tables
 Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
 
+
+Route::get('/services', $controller_path . '\services\Services@index')->name('services');
+Route::post('/addService', $controller_path . '\dashboard\Analytics@store')->name('services.store');
+//Route::put('/update/{id}', $controller_path . '\dashboard\Analytics@update')->name('service.update');
+Route::delete('/delete/services/{id}', $controller_path . '\dashboard\Analytics@destroy')->name('service.destroy');
+
+Route::get('/service/{id}/edit',  $controller_path .'\services\Services@edit')->name('edit-service');
+Route::put('/service/{id}/update',$controller_path . '\services\Services@update')->name('update.service');
+
+
+
+
+
+
 // Categories 
 
 //Route::resource('categories', CategoryController::class);
@@ -113,3 +127,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+//Route::get('/services', $controller_path . '\services\Services@index')->name('services');
+// Route::get('/Services/{idCategorie}', $controller_path . '\services\Services@getServiceByIdCategorie')->name('Services-categorie');
+// Route::post('/addService', $controller_path . '\dashboard\Analytics@store')->name('services.store');
+// //Route::get('/categories/{id?}', $controller_path . '\dashboard\Analytics@create')->name('categories.create');
+// Route::get('/edit/{id}', $controller_path . '\dashboard\Analytics@edit')->name('service.edit');
