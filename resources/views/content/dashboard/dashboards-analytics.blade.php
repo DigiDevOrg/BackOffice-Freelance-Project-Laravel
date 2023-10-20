@@ -310,7 +310,7 @@
     <div class="card mb-4">
        
         <div class="card-body">
-            <form method="POST" action="{{ route('services.store') }}">
+            <form method="POST" action="{{ route('services.store') }} " enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -342,7 +342,17 @@
                         @endforeach
                     </select>
                 </div>
-
+                <div class="mb-3">
+                  <label class="input-group-text " for="inputGroupFile01">Image</label>
+                  <input type="file" class="form-control" id="inputGroupFile01"  name="image">
+                </div>
+                
+                
+                <div class="mb-3">
+                  <label class="input-group-text" for="attachments">Attachments</label>
+                  <input type="file" class="form-control" id="attachments" name="attachments[]" multiple>
+              </div>
+              <br>
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
 
                 <button type="submit" class="btn btn-primary">Create Service</button>

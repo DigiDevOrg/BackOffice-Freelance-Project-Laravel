@@ -15,4 +15,8 @@ class Service extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function attachments()
+    {
+    return $this->hasMany(Attachment::class);
+    }
 }

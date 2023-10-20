@@ -15,7 +15,7 @@
   <div class="col-md-6 col-lg-4 mb-3">
     <div class="card h-100">
       <!-- Replace 'img/src' and 'card-title' and 'card-text' with actual fields from your Service model -->
-      <img class="card-img-top" src="{{ asset('storage/assets/img/service/' . $service->image) }}"alt="Card image cap" />
+      <img class="card-img-top" src="{{ asset('storage/public/assets/img/service/' . $service->image) }}"alt="Card image cap" />
       <div class="card-body">
         <h5 class="card-title">{{ $service->title }}</h5>
         <p class="card-text">{{ $service->description }}</p>

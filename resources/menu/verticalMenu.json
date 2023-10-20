@@ -48,22 +48,16 @@
       "submenu": [
         {
           "url": "/categories/create",
-          "name": "Create a New Categorie",
+          "name": "Create Category",
           "slug": "pages-account-settings-account"
         },
         {
           "url": "categories",
           "name": "List All Categories",
           "slug": "pages-account-settings-notifications"
-        },
-        {
-          "url": "/categories/{category}/edit",
-          "name": "Edit Categorie",
-          "slug": "pages-account-settings-connections"
         }
       ]
     },
-   
     {
       "url": "tables/basic",
       "icon": "menu-icon tf-icons bx bx-table",
