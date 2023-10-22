@@ -111,6 +111,8 @@ Route::get('/skills/{skill}', [SkillsController::class, 'show'])->name('skills.s
 Route::get('/skills/{skill}/edit', [SkillsController::class, 'edit'])->name('skills.edit');
 Route::put('/skills/{skill}', [SkillsController::class, 'update'])->name('skills.update');
 Route::delete('/skills/{skill}', [SkillsController::class, 'destroy'])->name('skills.destroy');
+Route::get('/get-skills/{categoryId}', [SkillsController::class, 'getSkills'])->name('skills.getSkills');
+
 
 Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
 Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
