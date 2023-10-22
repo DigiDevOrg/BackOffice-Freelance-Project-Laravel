@@ -66,4 +66,15 @@ class SkillsController extends Controller
 
         return redirect()->route('skills.index')->with('success', 'Skill deleted successfully');
     }
+
+    public function getSkills($categoryId)
+{
+    
+    $category = Category::find($categoryId);
+
+
+    $skills = $category->skills;
+
+    return response()->json($skills);
+}
 }

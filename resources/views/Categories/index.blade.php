@@ -18,7 +18,7 @@
 
     @foreach ($categories as $category)
     @php
-    $cssClass = $classNames[array_rand($classNames)]; // Pick a random class
+    $cssClass = $classNames[array_rand($classNames)]; 
     @endphp
 
     <div class="col-md-6 col-xl-4">
