@@ -5,6 +5,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SkillsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewController ; 
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +118,9 @@ Route::get('/get-skills/{categoryId}', [SkillsController::class, 'getSkills'])->
 Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
 Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+Route::resource("reviews", ReviewController::class);
+
 
 Route::middleware([
     'auth:sanctum',
