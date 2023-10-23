@@ -104,8 +104,12 @@
                                     <a id="download-button" style="display: none"
                                         href="{{ asset('storage/public/files/' . $attachment->filename) }}"
                                         download>Download</a>
-                                    <meta name="csrf-token" content="{{ csrf_token() }}">
-                                    <a id="delete-button" style="display: none">Delete</a>
+                                    <form action="{{ route('delete.attachment', $attachment->filename) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a id="delete-button" style="display: none">Delete</a>
+                                    </form>
                                 </div>
 
                             </div>
@@ -175,7 +179,6 @@
         select.addEventListener('change', () => {
             const selectedOption = select.options[select.selectedIndex];
             if (selectedOption) {
-                console.log(selectedOption.value);
                 deleteButton.style.display = 'inline';
                 const value = selectedOption.value;
                 deleteButton.addEventListener('click', () => {
@@ -187,16 +190,15 @@
                     fetch(`/deleteAttachment/${value}`, {
                             method: 'DELETE',
                             headers: {
-                                'X-CSRF-TOKEN': csrfToken, // Include the CSRF token in the headers
+                                'X-CSRF-TOKEN': csrfToken,
                             },
                         })
                         .then(response => {
-                            if (response.status === 200) {
-
-                                console.log('Attachment deleted successfully');
-                            } else {
-                                console.log(response)
+                            if (response.status === 404 || response.status === 500) {
                                 console.error('Error deleting attachment');
+                            } else {
+                                console.log(response);
+                                console.log('Attachment deleted successfully');
                             }
                         })
                         .catch(error => {

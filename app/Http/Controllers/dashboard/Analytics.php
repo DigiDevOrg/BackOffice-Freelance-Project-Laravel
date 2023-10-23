@@ -5,8 +5,8 @@ namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Attachment;
 use App\Models\Category;
-use App\Models\Skills;
 use App\Models\Service;
+use App\Models\Skills;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,17 +14,17 @@ class Analytics extends Controller
 {
     public function index()
     {
-        $services1 = Service::all();
-        $id = Auth::user()->id;
-
+        if (Auth::user()) {
+            $id = Auth::user()->id;
+        } else {
+            return redirect()->route('login');
+        }
         $categories = Category::all();
-        $skills = Skills::all() ; 
-        $services = Service::where('user_id', $id)->get();
 
+        $skills = Skills::all();
+        $services = Service::where('user_id', $id)->get();
         $name = Auth::user()->name;
         if (!isset($name)) {
-            dd('gee');
-
             return view('Services.services-basic', compact('services'));
         } else {
             return view('content.dashboard.dashboards-analytics', compact('services', 'categories', 'name', 'skills'));

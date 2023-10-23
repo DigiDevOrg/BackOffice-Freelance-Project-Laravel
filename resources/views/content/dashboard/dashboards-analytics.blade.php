@@ -25,8 +25,12 @@
           <div class="card-body">
             <h5 class="card-title text-primary">Congratulations {{ $name }}! 🎉</h5>
             <p class="mb-4">You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in your profile.</p>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
 
-            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+              <button type="submit" class="btn btn-sm btn-outline-primary">Logout</button>
+          </form>
+           
           </div>
           
         </div>
