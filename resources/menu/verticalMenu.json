@@ -41,6 +41,14 @@
         "slug": "Services"
       
     },
+    
+    {
+      "name": "my reviews",
+      "icon": "menu-icon tf-icons bx bx-collection",
+        "url": "/reviews",
+        "slug": "Reviews"
+      
+    },
     {
       "name": "Selling Categories",
       "icon": "menu-icon tf-icons bx bx-box",
@@ -58,6 +66,7 @@
         }
       ]
     },
+
     {
       "url": "tables/basic",
       "icon": "menu-icon tf-icons bx bx-table",
