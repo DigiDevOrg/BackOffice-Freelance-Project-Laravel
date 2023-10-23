@@ -101,7 +101,7 @@ Route::post('/categories', [CategoryController::class, 'store'])->name('categori
 // posts and comments
 Route::resource('posts', PostController::class);
 Route::resource('comments', CommentController::class)->only(['edit', 'update', 'destroy']);
-//Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 Route::get('/skills', [SkillsController::class, 'index'])->name('skills.index');
 Route::get('/skills/create', [SkillsController::class, 'create'])->name('skills.create');
