@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.review-card {
+    display: inline-block;
+    width: 30%; /* Ajustez la largeur en pourcentage selon vos besoins */
+    margin: 10px; /* Ajustez la marge pour l'espacement entre les reviews */
+}
+
